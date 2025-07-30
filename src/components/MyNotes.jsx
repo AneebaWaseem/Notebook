@@ -109,7 +109,7 @@ const MyNotes = () => {
         />
       </div>
 
-      <div className="mt-4 cursor-pointer px-2 border border-[#85888bff] rounded-xl">
+      <div className="mt-4 cursor-pointer px-2 border border-[#85888bff] rounded-xl w-[90vw] md:w-[70vw]">
         {filteredNotes.length === 0 ? (
           <p className="text-white text-center">No matching notes found.</p>
         ) : (
