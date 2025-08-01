@@ -16,6 +16,9 @@ A simple notes app made with **React**, **Vite**, and **Tailwind CSS**. You can 
 
 ---
 
+Check it out on:
+https://notebook-coral-theta.vercel.app/
+
 ## 🚀 Getting Started
 
 ### 1. Clone the project
