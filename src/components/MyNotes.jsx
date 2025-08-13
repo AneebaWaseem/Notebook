@@ -34,20 +34,19 @@ const MyNotes = () => {
     });
   }, [notes]);
 
-  // Filter notes based on search input
+  // Filter notes
   const filteredNotes = useMemo(() => {
     return formattedNotes.filter((note) =>
       note.title.toLowerCase().includes(searchTitle.toLowerCase())
     );
   }, [searchTitle, formattedNotes]);
 
-  // Open modal and load note data into form
+  // edit modal
   const openEditModal = (note) => {
     setEditNoteData(note);
     setEditModalOpen(true);
   };
 
-  // Handle form input changes in modal
   const handleChange = (e) => {
     const { name, value } = e.target;
     setEditNoteData((prev) => ({
@@ -56,18 +55,19 @@ const MyNotes = () => {
     }));
   };
 
-  // Submit edited note
   const handleEditSubmit = (e) => {
     e.preventDefault();
-    dispatch(update(editNoteData)); // dispatch updated note
-    setEditModalOpen(false); // close modal
+    dispatch(update(editNoteData)); 
+    setEditModalOpen(false);
   };
 
+  // delete
   const handleDelete = (e, note) => {
     e.preventDefault();
     dispatch(remove(note));
   };
 
+  // copy
   const handleCopy = (text) => {
     navigator.clipboard
       .writeText(text)
@@ -161,7 +161,7 @@ const MyNotes = () => {
               &times;
             </button>
             <h2 className="text-xl font-semibold mb-4 text-white">
-              Edit Memory
+              Edit Note
             </h2>
             <form
               onSubmit={handleEditSubmit}
