@@ -82,7 +82,7 @@ const MyNotes = () => {
 
   return (
     <div className="flex flex-col items-center justify-center ">
-      <div className="flex flex-col w-[90vw] md:w-[70vw]">
+      <div className="flex flex-col w-[92vw] md:w-[72vw]">
         <div className="flex flex-row my-3 justify-between ml-auto">
           <button
             style={{ borderRadius: "1rem" }}
@@ -105,13 +105,13 @@ const MyNotes = () => {
           placeholder="Search"
           value={searchTitle}
           onChange={(e) => setSearchTitle(e.target.value)}
-          className="w-[90vw] md:w-[70vw] rounded-xl py-3 px-4 text-[#8a9db8] outline-none border-1 border-[#85888bff]"
+          className="w-[92vw] md:w-[72vw] rounded-xl py-3 px-4 text-[#8a9db8] outline-none border-1 border-[#85888bff]"
         />
       </div>
 
-      <div className="mt-4 cursor-pointer px-2 border border-[#85888bff] rounded-xl w-[90vw] md:w-[70vw]">
+      <div className="flex flex-col justify-center items-center mt-4 cursor-pointer px-2 border border-[#85888bff] rounded-xl w-[92vw] md:w-[72vw]">
         {filteredNotes.length === 0 ? (
-          <p className="text-white text-center">No matching notes found.</p>
+          <p className="text-white text-center p-10">No matching notes found.</p>
         ) : (
           <>
             <p className="text-white text-center text-xl font-semibold my-2">All Notes</p>
@@ -137,8 +137,8 @@ const MyNotes = () => {
                     />
                   </div>
                 </div>
-                <div className="flex flex-row justify-between py-2 px-3">
-                  <p className="w-[60vw]  whitespace-pre-line">{note.content}</p>
+                <div className="flex flex-row justify-between py-2 px-3 justify-between">
+                  <p className="w-[80vw] md:w-[60vw] whitespace-pre-line">{note.content}</p>
                   <div className="flex flex-col items-end text-sm">
                     <span>{note.formattedDate}</span>
                     <span>{note.formattedTime}</span>
