@@ -7,7 +7,7 @@ const loadNotes = () => {
     return notesFromStorage ? JSON.parse(notesFromStorage) : [];
   } catch (e) {
     console.warn("Failed to parse notes from localStorage:", e);
-    localStorage.removeItem("notes"); // clear corrupted data
+    localStorage.removeItem("notes");
     return [];
   }
 };
@@ -27,7 +27,7 @@ export const appSlice = createSlice({
       
       localStorage.setItem("notes", JSON.stringify(state.notes))
       
-      toast("Memory Saved Successfully!")
+      toast("Notes Saved Successfully!")
     },
     update: (state, action) => {
       const note = action.payload
@@ -37,7 +37,7 @@ export const appSlice = createSlice({
 
         localStorage.setItem("notes", JSON.stringify(state.notes))
       
-        toast("Memory Updated Successfully!")
+        toast("Notes Updated Successfully!")
       }
     },
     remove: (state, action) => {
@@ -48,18 +48,17 @@ export const appSlice = createSlice({
 
         localStorage.setItem("notes", JSON.stringify(state.notes))
       
-        toast("Memory Deleted Successfully!")
+        toast("Notes Deleted Successfully!")
       }
     },
     reset: (state) => {
       state.notes = []
       localStorage.removeItem("notes")
-      toast("All Memories Cleared!")
+      toast("All Notes Cleared!")
     },
   },
 })
 
-// Action creators are generated for each case reducer function
 export const { add, update, reset, remove } = appSlice.actions
 
 export default appSlice.reducer
